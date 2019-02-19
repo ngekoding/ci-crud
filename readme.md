@@ -8,3 +8,12 @@ Just a simple CRUD (Create, Read, Update, Delete) with CodeIgniter Framework.
 3. Change `base_url` setting at `application\config\config.php` to `http://localhost/ci-crud`
 4. Import `DB.sql` to your SQL server `(e.g. with phpMyAdmin)`
 5. Just open your browser and accessing it `(e.g. http://localhost/ci-crud)`
+
+## New feature (2019-02-19)
+### Generate PDF with DOMPDF
+After install, please do the following steps:
+1. Install dompdf library
+   - Open CMD/Terminal, go to `application` folder and run `composer install`
+2. Create new directory at `assets/pdf-outputs` and make it writable
+3. Open `YOU_BASE_URL/index.php/report`
+4. You are done!
