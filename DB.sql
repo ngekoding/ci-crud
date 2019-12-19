@@ -21,8 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `crud`
 --
-CREATE DATABASE IF NOT EXISTS `crud` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `crud`;
+CREATE DATABASE IF NOT EXISTS `ci_crud` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `ci_crud`;
 
 -- --------------------------------------------------------
 
@@ -33,7 +33,7 @@ USE `crud`;
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `categories`
@@ -54,7 +54,7 @@ CREATE TABLE `posts` (
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `category_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `posts`

@@ -3,13 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Post extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		// Only authenticated user can access
+		auth_checker();
+		
+		$this->load->model('m_post');
+		$this->load->model('m_category');
+	}
+
 	public function index()
 	{
-		$this->load->model('m_post');
-		
 		$posts = $this->m_post->get_all();
-
-		// var_dump($posts); exit;
 
 		$data['posts'] = $posts;
 
@@ -18,8 +25,6 @@ class Post extends CI_Controller {
 
 	public function create()
 	{
-		$this->load->model('m_category');
-
 		$data['categories'] = $this->m_category->get_all();
 
 		$this->load->view('posts/create', $data);
@@ -27,8 +32,6 @@ class Post extends CI_Controller {
 
 	public function store()
 	{
-		$this->load->model('m_post');
-
 		// Collecting data
 		$title 		= $this->input->post('title');
 		$descripion = $this->input->post('descripion');
@@ -52,9 +55,6 @@ class Post extends CI_Controller {
 
 	public function edit($id)
 	{
-		$this->load->model('m_post');
-		$this->load->model('m_category');
-
 		$data['categories'] = $this->m_category->get_all();
 
 		// Get single post data by ID
@@ -65,8 +65,6 @@ class Post extends CI_Controller {
 
 	public function update()
 	{
-		$this->load->model('m_post');
-
 		// Collecting data
 		$id 		= $this->input->post('id');
 		$title 		= $this->input->post('title');
@@ -91,8 +89,6 @@ class Post extends CI_Controller {
 
 	public function delete($id)
 	{
-		$this->load->model('m_post');
-
 		$delete = $this->m_post->delete($id);
 
 		if ($delete) {
