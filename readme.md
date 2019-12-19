@@ -9,6 +9,15 @@ Just a simple CRUD (Create, Read, Update, Delete) with CodeIgniter Framework.
 4. Import `DB.sql` to your SQL server `(e.g. with phpMyAdmin)`
 5. Just open your browser and accessing it `(e.g. http://localhost/ci-crud)`
 
+## New feature (2019-12-19)
+### Simple Auth
+Please use `DB-with-auth.sql` to make auth working.
+This auth feature is very simple, take a look to these files.
+- `application/config/autoload.php`
+- `application/controllers/Auth.php`
+- `application/helpers/auth_helper.php`
+- `application/views/users/login-form.php`
+
 ## New feature (2019-02-19)
 ### Generate PDF with DOMPDF
 After install, please do the following steps:
