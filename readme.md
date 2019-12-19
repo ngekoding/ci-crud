@@ -18,6 +18,8 @@ This auth feature is very simple, take a look to these files.
 - `application/helpers/auth_helper.php`
 - `application/views/users/login-form.php`
 
+Try! Open your browser and access post controller `(http://localhost/ci-crud/post)`.
+
 ## New feature (2019-02-19)
 ### Generate PDF with DOMPDF
 After install, please do the following steps:
