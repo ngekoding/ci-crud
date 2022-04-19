@@ -4,7 +4,7 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link rel="stylesheet" href="<?php echo base_url('assets/libs/bootstrap/css/bootstrap.min.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/libs/bootstrap/css/bootstrap.min.css') ?>">
 
 		<title>Auth - Ngekoding</title>
 	</head>
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 
-		<script src="<?php echo base_url() ?>assets/libs/js/jquery-3.3.1.min.js"></script>
-		<script src="<?php echo base_url() ?>assets/libs/bootstrap/js/bootstrap.min.js"></script>
+		<script src="<?= base_url() ?>assets/libs/js/jquery-3.3.1.min.js"></script>
+		<script src="<?= base_url() ?>assets/libs/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>

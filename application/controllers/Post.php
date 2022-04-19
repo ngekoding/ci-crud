@@ -20,14 +20,14 @@ class Post extends CI_Controller {
 
 		$data['posts'] = $posts;
 
-		$this->load->view('posts/index', $data);
+		$this->template->show('posts/index', $data);
 	}
 
 	public function create()
 	{
 		$data['categories'] = $this->m_category->get_all();
 
-		$this->load->view('posts/create', $data);
+		$this->template->show('posts/create', $data);
 	}
 
 	public function store()
@@ -60,7 +60,7 @@ class Post extends CI_Controller {
 		// Get single post data by ID
 		$data['post'] = $this->m_post->get($id);
 
-		$this->load->view('posts/edit', $data);
+		$this->template->show('posts/edit', $data);
 	}
 
 	public function update()
