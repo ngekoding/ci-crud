@@ -1,5 +1,6 @@
 {
     "require": {
-        "dompdf/dompdf": "^0.8.3"
+        "dompdf/dompdf": "^0.8.3",
+        "ngekoding/codeigniter-datatables": "^1.0"
     }
 }

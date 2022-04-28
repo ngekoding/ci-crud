@@ -11,6 +11,13 @@ class M_post extends CI_Model {
 				 	 	->result();
 	}
 
+	public function get_all_query()
+	{
+		return $this->db->select('p.*, c.name AS category, concat(p.id, "-", c.id) pcid')
+						->from('posts p')
+						->join('categories c', 'c.id=p.category_id');
+	}
+
 	public function insert($data)
 	{
 		return $this->db->insert('posts', $data);

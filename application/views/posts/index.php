@@ -1,14 +1,15 @@
 <h3>Post</h3>
 <hr>
 <a href="<?= site_url('post/create') ?>" class="btn btn-success btn-sm">Add new</a>
+<a href="<?= site_url('post/datatables') ?>" class="btn btn-primary btn-sm">Datatables</a>
 <br><br>
 
 <!-- Success & Error message -->
 <?php if ($this->session->flashdata('msg_success')): ?>
-<div class="alert alert-success"><?= $this->session->flashdata('msg_success') ?></div>
+	<div class="alert alert-success"><?= $this->session->flashdata('msg_success') ?></div>
 <?php endif ?>
 <?php if ($this->session->flashdata('msg_error')): ?>
-<div class="alert alert-danger"><?= $this->session->flashdata('msg_error') ?></div>
+	<div class="alert alert-danger"><?= $this->session->flashdata('msg_error') ?></div>
 <?php endif ?>
 
 <table class="table table-bordered table-striped">

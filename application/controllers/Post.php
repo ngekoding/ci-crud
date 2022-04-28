@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Ngekoding\CodeIgniterDataTables\DataTables;
+
 class Post extends CI_Controller {
 
 	public function __construct()
@@ -12,6 +14,8 @@ class Post extends CI_Controller {
 		
 		$this->load->model('m_post');
 		$this->load->model('m_category');
+
+		$this->load->helper('api');
 	}
 
 	public function index()
@@ -34,12 +38,12 @@ class Post extends CI_Controller {
 	{
 		// Collecting data
 		$title 		= $this->input->post('title');
-		$descripion = $this->input->post('descripion');
+		$description = $this->input->post('description');
 		$category 	= $this->input->post('category');
 
 		$data = [
 			'title' 	  => $title,
-			'description' => $descripion,
+			'description' => $description,
 			'category_id' => $category
 		];
 
@@ -68,12 +72,12 @@ class Post extends CI_Controller {
 		// Collecting data
 		$id 		= $this->input->post('id');
 		$title 		= $this->input->post('title');
-		$descripion = $this->input->post('descripion');
+		$description = $this->input->post('description');
 		$category 	= $this->input->post('category');
 
 		$data = [
 			'title' 	  => $title,
-			'description' => $descripion,
+			'description' => $description,
 			'category_id' => $category
 		];
 
@@ -97,5 +101,70 @@ class Post extends CI_Controller {
 			$this->session->set_flashdata('msg_error', 'Can\'t deleting post! Please try again.');
 		}
 		redirect('post');
+	}
+
+	public function datatables()
+	{
+		// Use for modal
+		$data['categories'] = $this->m_category->get_all();
+
+		$this->template->show('posts/index-datatables', $data);
+	}
+
+	public function ajax_datatables()
+	{
+		$query = $this->m_post->get_all_query();
+
+		$datatables = new DataTables($query, '3');
+
+		$datatables->addSequenceNumber('row_number')
+				   ->asObject()
+				   ->generate();
+	}
+
+	public function ajax_get($id)
+	{
+		$post = $this->m_post->get($id);
+
+		return send_success_response($post);
+	}
+
+	public function ajax_delete()
+	{
+		$id = $this->input->post('id');
+		if (empty($id)) return send_unprocessable_entity();
+
+		$delete = $this->m_post->delete($id);
+
+		if ($delete) return send_success_response();
+		return send_internal_server_error();
+	}
+
+	/**
+	 * We will use this method to handle both for insert and update
+	 * If the ID exists, we perform an update
+	 */
+	public function ajax_store()
+	{
+		// Collecting data
+		$id 		= $this->input->post('id');
+		$title 		= $this->input->post('title');
+		$description = $this->input->post('description');
+		$category 	= $this->input->post('category');
+
+		$data = [
+			'title' 	  => $title,
+			'description' => $description,
+			'category_id' => $category
+		];
+
+		if (!empty($id)) {
+			$save = $this->m_post->update($data, $id);
+		} else {
+			$save = $this->m_post->insert($data);
+		}
+
+		if ($save) return send_success_response();
+		return send_internal_server_error();
 	}
 }
