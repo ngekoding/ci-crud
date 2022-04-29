@@ -122,6 +122,30 @@ class Post extends CI_Controller {
 				   ->generate();
 	}
 
+	public function datatables_array()
+	{
+		// Use for modal
+		$data['categories'] = $this->m_category->get_all();
+
+		$this->template->show('posts/index-datatables-array', $data);
+	}
+
+	public function ajax_datatables_array()
+	{
+		$query = $this->m_post->get_all_query();
+
+		$datatables = new DataTables($query, '3');
+
+		$datatables->addSequenceNumber()
+				   ->only(['title', 'category', 'description'])
+				   ->addColumn('action', function($row) {
+						$edit = '<a href="#" onclick="alert(\'Edit button clicked!\')" class="btn btn-success btn-sm">Edit</a>';
+					   	$delete = '<a href="#" onclick="alert(\'Delete button clicked!\')" class="btn btn-danger btn-sm">Delete</a>';
+						return $edit.' '.$delete;
+				   })
+				   ->generate();
+	}
+
 	public function ajax_get($id)
 	{
 		$post = $this->m_post->get($id);

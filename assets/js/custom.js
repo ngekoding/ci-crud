@@ -152,4 +152,11 @@ $(document).ready(function() {
 			});
 		}
 	})
+
+	$('#table-post-array').DataTable({
+		processing: true,
+		serverSide: true,
+		ajax: site_url + '/post/ajax_datatables_array',
+		order: [],
+	})
 })
