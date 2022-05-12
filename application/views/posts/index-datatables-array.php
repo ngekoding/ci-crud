@@ -2,6 +2,7 @@
 	<thead>
 		<tr>
 			<th width="15">#</th>
+			<th width="20">ID</th>
 			<th width="200">Title</th>
 			<th width="120">Category</th>
 			<th>Description</th>

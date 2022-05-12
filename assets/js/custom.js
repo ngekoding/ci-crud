@@ -158,5 +158,9 @@ $(document).ready(function() {
 		serverSide: true,
 		ajax: site_url + '/post/ajax_datatables_array',
 		order: [],
+		"columnDefs": [{
+      "targets"  : 0,
+      "orderable": false,
+    }]
 	})
 })

@@ -137,7 +137,8 @@ class Post extends CI_Controller {
 		$datatables = new DataTables($query, '3');
 
 		$datatables->addSequenceNumber()
-				   ->only(['title', 'category', 'description'])
+				   ->only(['id', 'title', 'category', 'description'])
+				   ->addColumnAlias('p.id', 'id') // The `id` will look for `p.id`
 				   ->addColumn('action', function($row) {
 						$edit = '<a href="#" onclick="alert(\'Edit button clicked!\')" class="btn btn-success btn-sm">Edit</a>';
 					   	$delete = '<a href="#" onclick="alert(\'Delete button clicked!\')" class="btn btn-danger btn-sm">Delete</a>';
