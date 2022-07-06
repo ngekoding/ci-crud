@@ -58,6 +58,7 @@
             </div>
             <div class="list-group list-group-flush">
               <a href="<?= site_url('example/dompdf') ?>" class="list-group-item list-group-item-action">DOMPDF</a>
+              <a href="<?= site_url('example/phpword') ?>" class="list-group-item list-group-item-action">PHPWord</a>
             </div>
           </div>
         </div>  

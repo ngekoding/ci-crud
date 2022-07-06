@@ -11,6 +11,10 @@ Just a simple CRUD (Create, Read, Update, Delete) with CodeIgniter Framework.
 
 ## Features
 
+#### Create .docx document from template (PHPWord Example) @2022-07-06
+
+This example use `phpoffice/phpword` library, and will generate the document from template. Try it from the **Example > PHPWord** sidebar menu.
+
 #### DataTables Server-side @28-04-2022
 
 There are some commits for this examples, including bugs fix.
