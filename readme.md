@@ -16,7 +16,10 @@ Just a simple CRUD (Create, Read, Update, Delete) with CodeIgniter Framework.
 5. Install libraries
 	 - Open CMD/Terminal, go to `application` folder and run `composer install`
 6. Just open your browser and accessing it `(e.g. http://localhost/ci-crud)`
-7. Explore and enjoy!
+7. Login with
+	 - Username: admin
+	 - Password: 123456
+8. Explore and enjoy!
 
 ## Features
 
