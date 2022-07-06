@@ -1,13 +1,22 @@
 # CodeIgniter CRUD
 Just a simple CRUD (Create, Read, Update, Delete) with CodeIgniter Framework.
 
+## Requirements
+
+- PHP 5.6 or above
+- Composer
+
 ## How to install
+
 1. Clone/Download this repo to your local server
    - XAMPP: path/to/xampp/htdocts
 2. Configure database setting at `application\config\database.php` (hostname, username, password)
 3. Change `base_url` setting at `application\config\config.php` to `http://localhost/ci-crud`
-4. Import `DB.sql` to your SQL server `(e.g. with phpMyAdmin)`
-5. Just open your browser and accessing it `(e.g. http://localhost/ci-crud)`
+4. Import `DB-with-auth.sql` to your SQL server `(e.g. with phpMyAdmin)`
+5. Install libraries
+	 - Open CMD/Terminal, go to `application` folder and run `composer install`
+6. Just open your browser and accessing it `(e.g. http://localhost/ci-crud)`
+7. Explore and enjoy!
 
 ## Features
 
@@ -15,7 +24,7 @@ Just a simple CRUD (Create, Read, Update, Delete) with CodeIgniter Framework.
 
 This example use `phpoffice/phpword` library, and will generate the document from template. Try it from the **Example > PHPWord** sidebar menu.
 
-#### DataTables Server-side @28-04-2022
+#### DataTables Server-side @04-28-2022
 
 There are some commits for this examples, including bugs fix.
 - [1] 52db53ee030f7b2291c852628dc877c41f3f4c56
