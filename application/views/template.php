@@ -52,6 +52,14 @@
               <a href="<?= site_url('auth/logout') ?>" class="list-group-item list-group-item-action text-danger">Logout</a>
             </div>
           </div>
+		  <div class="card mt-2">
+            <div class="card-header">
+              Examples
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="<?= site_url('example/dompdf') ?>" class="list-group-item list-group-item-action">DOMPDF</a>
+            </div>
+          </div>
         </div>  
         <div class="col-md-9">
           <!-- Content -->
